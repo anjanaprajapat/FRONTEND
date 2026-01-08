@@ -1,0 +1,230 @@
+/* ===========================
+  GLOBAL STYLES
+=========================== */
+:root {
+  --bg-color:black;
+  --card-bg: rgba(17, 24, 39, 0.85); /* Transparent for BG image visibility */
+  --text-color: #e0e6f0;
+  --accent: #0ea5e9;
+  --muted: #94a3b8;
+  --hover: #2563eb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+/* FULL PAGE BACKGROUND */
+body {
+  background: url("/WhatsApp\ Image\ 2025-12-03\ at\ 5.04.53\ AM.jpeg") center/cover no-repeat fixed;
+  color: var(--text-color);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* DARK OVERLAY FOR READABILITY */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); 
+  backdrop-filter: blur(3px);
+  z-index: -1;
+}
+
+/* ===========================
+  CONTAINER
+=========================== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ===========================
+  HEADER BACKGROUND
+=========================== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  background: url("cyberbg.jpg") center/cover no-repeat;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+header .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--accent);
+}
+
+nav a {
+  color: var(--text-color);
+  margin-left: 15px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: var(--hover);
+  text-decoration: underline;
+}
+
+/* ===========================
+  HERO SECTION BACKGROUND
+=========================== */
+.hero {
+  text-align: center;
+  padding: 100px 20px 50px 20px;
+  background: url("cyberbg.jpg") center/cover no-repeat;
+  border-radius: 15px;
+  margin-bottom: 40px;
+  color: #ffffff;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: var(--accent);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+}
+
+.hero .btn {
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 25px;
+  margin: 0 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.hero .btn:hover {
+  background: var(--hover);
+}
+
+/* ===========================
+  CARD SECTIONS BACKGROUND
+=========================== */
+.card {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+
+  /* background added */
+  background-image: url("cyberbg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Card title */
+.card h2 {
+  color: var(--accent);
+  margin-bottom: 15px;
+}
+
+.card ul li {
+  margin: 10px 0;
+  padding-left: 15px;
+  position: relative;
+}
+
+.card ul li::before {
+  content: "•";
+  color: var(--accent);
+  position: absolute;
+  left: 0;
+}
+
+/* ===========================
+  QUIZ STYLES
+=========================== */
+.quiz-question {
+  margin-bottom: 20px;
+}
+
+.option-btn {
+  display: block;
+  background: white;
+  color: #0f61cc;
+  border: none;
+  padding: 10px 15px;
+  margin: 8px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.option-btn:hover {
+  background: var(--hover);
+}
+
+.option-btn.selected {
+  outline: 3px solid var(--accent);
+}
+
+
+/* ===========================
+  FOOTER BACKGROUND
+=========================== */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: url("cyberbg.jpg") center/cover no-repeat;
+  color: var(--muted);
+  margin-top: 40px;
+  border-top: 1px solid var(--accent);
+  border-radius: 10px;
+}
+
+/* ===========================
+  RESPONSIVE
+=========================== */
+@media (max-width:768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+/* ===========================
+   LIGHT THEME (activated by JS)
+=========================== */
+.light-theme {
+  --bg-color: #faf4f4;
+  --card-bg: rgba(246, 245, 245, 0.85);
+  --text-color: #165fa3;
+  --muted: #475569;
+}
+
+#toggleTheme {
+  background: var(--accent);
+  color: rgb(255, 253, 253);
+  padding: 8px 15px;
+  margin-left: 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#toggleTheme:hover {
+  background: var(--hover);
+}
